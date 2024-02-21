@@ -1,10 +1,20 @@
 import React from "react";
+import { checkOtp } from "../../services/otp";
+import { cookie } from "../../util/cooki";
 
 function Checkotp({ code, setCode, mobile, setStep }) {
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log({ code, mobile });
+
+    const { response, error } = await checkOtp(mobile, code);
+    {
+      response && cookie(response.data);
+    }
+    {
+      error && console.log(error);
+    }
   };
+
   return (
     <form onSubmit={submitHandler}>
       <h4>ورود به حساب کاربری</h4>
