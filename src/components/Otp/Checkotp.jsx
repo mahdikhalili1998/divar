@@ -1,6 +1,6 @@
 import React from "react";
 import { checkOtp } from "../../services/otp";
-import { cookie } from "../../util/cooki";
+import { cookie } from "util/cooki";
 
 function Checkotp({ code, setCode, mobile, setStep }) {
   const submitHandler = async (e) => {
@@ -11,7 +11,7 @@ function Checkotp({ code, setCode, mobile, setStep }) {
       response && cookie(response.data);
     }
     {
-      error && console.log(error);
+      error && console.log(error.response.data.message);
     }
   };
 
