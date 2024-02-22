@@ -5,7 +5,11 @@ import DashbordPage from "pages/DashbordPage";
 import AdminPage from "pages/AdminPage";
 import AuthPage from "pages/AuthPage";
 import PageNotFound from "pages/404";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../configs/user";
 function Router() {
+  const { data, isLoading, error } = useQuery(["user"], getUser);
+  console.log({data, isLoading, error});
   return (
     <Routes>
       <Route index element={<HomePage />} />
