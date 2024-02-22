@@ -10,6 +10,7 @@ const path = [
   "components",
   "configs",
   "pages",
+  "Router",
 ];
 // https://vitejs.dev/config/
 export default defineConfig({
