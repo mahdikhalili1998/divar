@@ -8,6 +8,7 @@ const paths = [
   "configs",
   "pages",
   "Router",
+  "css",
 ];
 
 export { paths };

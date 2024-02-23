@@ -10,6 +10,6 @@ const getCookis = (cookiName) => {
   return document.cookie
     .split(";")
     .find((item) => item.trim().split("=")[0] === cookiName)
-    .split("=")[1];
+    ?.split("=")[1];
 };
 export { cookie, getCookis };
