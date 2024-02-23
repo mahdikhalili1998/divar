@@ -1,4 +1,4 @@
-export const path = [
+const paths = [
   "src",
   "services",
   "styles",
@@ -9,3 +9,5 @@ export const path = [
   "pages",
   "Router",
 ];
+
+export { paths };
