@@ -11,7 +11,7 @@ import Loader from "components/Loader";
 
 function Router() {
   const { data, isLoading, error } = useQuery(["user"], getUser);
-  console.log({ data, isLoading, error });
+  // console.log({ data, isLoading, error });
   if (isLoading) return <Loader />;
   return (
     <Routes>

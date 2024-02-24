@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hearder() {
   return (
@@ -11,10 +12,10 @@ function Hearder() {
         </div>
       </div>
       <div className="flex gap-2">
-        <div className="flex items-center gap-[5px]">
+        <Link to="/dashbord" className="flex items-center gap-[5px]">
           <img src="profile.svg" alt="profile-logo" />
           <span>دیوار من</span>
-        </div>
+        </Link>
         <button className="bg-[#a62626] text-white py-[5px] px-1 rounded-md">
           ثبت آگهی
         </button>
