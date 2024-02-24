@@ -9,6 +9,7 @@ const paths = [
   "pages",
   "Router",
   "css",
+  "layout",
 ];
 
 export { paths };
