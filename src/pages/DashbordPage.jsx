@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import AddPost from "../components/AddPost";
 
 function DashbordPage() {
   return (
-    <div>DashbordPage</div>
-  )
+    <>
+      <AddPost />
+    </>
+  );
 }
 
-export default DashbordPage
+export default DashbordPage;
