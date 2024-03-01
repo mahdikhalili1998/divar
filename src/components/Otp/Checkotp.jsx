@@ -35,9 +35,9 @@ function Checkotp({ code, setCode, mobile, setStep }) {
         <p className="text-sm text-slate-400 mb-3">
           لطفا کد تاییدی را که به شماره {mobile} پیامک شده را وارد کنید{" "}
         </p>
-        <div className="mb-3">
+        <div className="mb-3 text-center">
           <input
-            className="w-full rounded border-solid border-2 border-[#a62626] p-[.5rem] placeholder-shown:text-center"
+            className="w-20 rounded border-solid border-2 border-[#a62626] p-[.5rem] placeholder-shown:text-center focus:outline-none"
             type="text"
             id="code"
             placeholder="کد تایید"

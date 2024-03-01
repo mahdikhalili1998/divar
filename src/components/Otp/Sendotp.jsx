@@ -29,9 +29,9 @@ function Sendotp({ mobile, setMobile, setStep }) {
           برای استفاده از امکانات دیوار , لطفا شماره موبایل خود را وارد کنید .
           کد تایید به این شماره پیامک خواهد شد
         </p>
-        <div className="mb-3 ">
+        <div className="mb-3 text-center ">
           <input
-            className="w-full rounded border-solid border-2 border-[#a62626] p-[.5rem] placeholder-shown:text-center"
+            className=" w-20 rounded border-solid border-2 border-[#a62626] p-[.5rem] placeholder-shown:text-center focus:outline-none"
             type="text"
             value={mobile}
             placeholder="09xx xxx xxxx"

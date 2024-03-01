@@ -11,9 +11,8 @@ function CategoryForm() {
     onSuccess: () => {
       queryClient.invalidateQueries("getCategories");
     },
-    
   });
-  
+
   useEffect(() => {
     if (data?.status === 201) {
       toast.success("دسته بندی ایجاد شد", { position: "top-center" });
@@ -30,7 +29,7 @@ function CategoryForm() {
     e.preventDefault();
     if (!form.name || !form.slug || !form.icon) return;
     mutate(form);
-    
+
     // setForm({ name: "", slug: "", icon: "" });
   };
 
@@ -41,13 +40,13 @@ function CategoryForm() {
         onSubmit={submitHandler}
         className="flex flex-col mt-3 mx-2"
       >
-        <h3 className="mb-3 inline text-right w-[8rem] pb-[5px] border-solid border-b-2 border-[#a62626]">
+        <h3 className="mb-3 inline text-right w-[8rem] pb-[5px] border-solid border-b-2 ">
           دسته بندی جدید
         </h3>
 
         <label className="mb-1">اسم دسته بندی </label>
         <input
-          className="rounded  mb-1 w-[8rem] border-solid border-2 border-[#a62626] "
+          className="rounded  mb-1 w-[8rem] border-solid border-2 border-[#a62626] focus:outline-none "
           type="text"
           name="name"
           id="name"
@@ -55,7 +54,7 @@ function CategoryForm() {
 
         <label className="mb-1">اسلاگ</label>
         <input
-          className="rounded  w-[8rem] mb-1  border-solid border-2 border-[#a62626] "
+          className="rounded  w-[8rem] mb-1  border-solid border-2 border-[#a62626]  focus:outline-none"
           type="text"
           name="slug"
           id="slug"
@@ -63,7 +62,7 @@ function CategoryForm() {
 
         <label className="mb-1">آیکون</label>
         <input
-          className="rounded  w-[8rem]  mb-3 border-solid border-2 border-[#a62626] "
+          className="rounded  w-[8rem]  mb-3 border-solid border-2 border-[#a62626] focus:outline-none "
           type="text"
           name="icon"
           id="icon"
