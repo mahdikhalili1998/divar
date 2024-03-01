@@ -51,7 +51,7 @@ function Checkotp({ code, setCode, mobile, setStep }) {
           <Link className="text-red-600">سیایت نامه حریم خصوصی</Link>
           <span> دیوار را میپذیرم</span>
         </div>
-        <div className="w-full text-left  ">
+        <div className="w-full text-left mb-5  ">
           <button
             className="  bg-[#a62626] text-white px-[1rem] py-[5px] rounded"
             type="submit"

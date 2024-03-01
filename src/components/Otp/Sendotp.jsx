@@ -47,7 +47,7 @@ function Sendotp({ mobile, setMobile, setStep }) {
         </div>
         <div className="w-full text-left">
           <button
-            className="  bg-[#a62626] text-white px-[1rem] py-[5px] rounded"
+            className="  bg-[#a62626] text-white px-[1rem] py-[5px] rounded mb-5"
             type="submit"
           >
             بعدی

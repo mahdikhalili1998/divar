@@ -11,7 +11,9 @@ function CategoryForm() {
     onSuccess: () => {
       queryClient.invalidateQueries("getCategories");
     },
+    
   });
+  
   useEffect(() => {
     if (data?.status === 201) {
       toast.success("دسته بندی ایجاد شد", { position: "top-center" });
@@ -28,6 +30,7 @@ function CategoryForm() {
     e.preventDefault();
     if (!form.name || !form.slug || !form.icon) return;
     mutate(form);
+    
     // setForm({ name: "", slug: "", icon: "" });
   };
 

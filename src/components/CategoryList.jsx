@@ -1,16 +1,18 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
 import { getCategory } from "services/createcategory";
 import Loader from "components/Loader";
-import { deleteCategory } from "../services/createcategory";
+import { deleteCategory } from "services/createcategory";
 
 function CategoryList() {
-  const { data, isLoading } = useQuery(["getCategories"], getCategory);
+  const queryClient = useQueryClient();
+  const { refetch, data, isLoading } = useQuery(["getCategories"], getCategory);
 
   console.log({ data, isLoading });
 
   const deleteHandler = (id) => {
-    // deleteCategory(id);
+    deleteCategory(id);
+    refetch();
   };
 
   return (
@@ -29,7 +31,7 @@ function CategoryList() {
               <p className="mb-[5px]">{`slug : ${item.slug}`}</p>
             </div>
             <span
-              onClick={deleteHandler(item._id)}
+              onClick={() => deleteHandler(item._id)}
               className="bg-red-700 text-white px-[5px] rounded-lg pt-[3px]"
             >
               X
