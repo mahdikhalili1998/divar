@@ -13,13 +13,13 @@ function CategoryForm() {
     },
   });
 
-  useEffect(() => {
+  useEffect(() => { 
     if (data?.status === 201) {
       toast.success("دسته بندی ایجاد شد", { position: "top-center" });
     }
   }, [data]);
 
-  console.log({ data, isLoading, error });
+  // console.log({ data, isLoading, error });
 
   const changHandler = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,7 +30,7 @@ function CategoryForm() {
     if (!form.name || !form.slug || !form.icon) return;
     mutate(form);
 
-    // setForm({ name: "", slug: "", icon: "" });
+    setForm({ name: "", slug: "", icon: "" });
   };
 
   return (
@@ -44,7 +44,7 @@ function CategoryForm() {
           دسته بندی جدید
         </h3>
 
-        <label className="mb-1">اسم دسته بندی </label>
+        <label className="mb-1">اسم دسته بندی : </label>
         <input
           className="rounded  mb-1 w-[8rem] border-solid border-2 border-[#a62626] focus:outline-none "
           type="text"
@@ -52,7 +52,7 @@ function CategoryForm() {
           id="name"
         />
 
-        <label className="mb-1">اسلاگ</label>
+        <label className="mb-1">اسلاگ : </label>
         <input
           className="rounded  w-[8rem] mb-1  border-solid border-2 border-[#a62626]  focus:outline-none"
           type="text"
@@ -60,7 +60,7 @@ function CategoryForm() {
           id="slug"
         />
 
-        <label className="mb-1">آیکون</label>
+        <label className="mb-1">آیکون : </label>
         <input
           className="rounded  w-[8rem]  mb-3 border-solid border-2 border-[#a62626] focus:outline-none "
           type="text"
@@ -75,7 +75,6 @@ function CategoryForm() {
         >
           ایجاد
         </button>
-        <ToastContainer />
       </form>
     </>
   );

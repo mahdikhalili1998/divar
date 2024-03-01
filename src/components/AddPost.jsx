@@ -15,7 +15,7 @@ function AddPost() {
   });
 
   const { data, isLoading } = useQuery(["getCategories"], getCategory);
-  // console.log({ data, isLoading });
+  console.log({ data, isLoading });
 
   const changeHandler = (event) => {
     const name = event.target.name;
@@ -34,7 +34,7 @@ function AddPost() {
     }
     const token = getCookis("accessToken");
     axios
-      .post(`${import.meta.env.VITE_BASE_URL}/post/create`, formData, {
+      .post(`${import.meta.env.VITE_BASE_URL}post/create`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `bearer ${token}`,
@@ -52,7 +52,7 @@ function AddPost() {
       <h3 className="mb-2">افزودن آگهی</h3>
       <div className="flex items-center gap-1">
         <label className="ml-[5px]" htmlFor="name-">
-          عنوان
+          عنوان :
         </label>
         <input
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none"
@@ -62,7 +62,7 @@ function AddPost() {
         />
       </div>
       <div className="flex items-center gap-1">
-        <label htmlFor="info">توضیحات</label>
+        <label htmlFor="info">توضیحات : </label>
         <textarea
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none"
           id="info"
@@ -70,7 +70,7 @@ function AddPost() {
         />
       </div>
       <div className="flex items-center gap-1">
-        <label htmlFor="price">قیمت</label>
+        <label htmlFor="price">قیمت : </label>
         <input
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none "
           id="price"
@@ -78,7 +78,7 @@ function AddPost() {
         />
       </div>
       <div className="flex items-center gap-1">
-        <label htmlFor="city">شهر </label>
+        <label htmlFor="city">شهر : </label>
         <input
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none"
           id="city"
@@ -86,7 +86,7 @@ function AddPost() {
         />
       </div>
       <div>
-        <label htmlFor="category"> دسته بندی </label>
+        <label htmlFor="category"> دسته بندی : </label>
         <select
           className="w-[10rem] rounded border-solid border-2 border-[#a62626]"
           id="category"
@@ -100,7 +100,7 @@ function AddPost() {
         </select>
       </div>
       <div>
-        <label htmlFor="pic">عکس</label>
+        <label htmlFor="pic">عکس : </label>
         <input id="pic" name="pic" type="file" />
       </div>
       <button
