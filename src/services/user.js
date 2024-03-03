@@ -1,4 +1,4 @@
-import api from "../configs/configs";
+import api from "configs/configs";
 const getUser = () => api.get("user/whoami").then((res) => res || false);
-
-export { getUser };
+const getPost = () => api.get("post/my");
+export { getUser, getPost };
