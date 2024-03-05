@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { getPost } from "../services/user";
 import { IoIosArrowDown } from "react-icons/io";
 import { GrFormClose } from "react-icons/gr";
-import { Popover, Transition } from "@headlessui/react";
+import { sp } from "../util/ReplaceNumber";
 
 function PostList() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +38,8 @@ function PostList() {
                 </div>
               </div>
               <div className="flex flex-col justify-between text-xs text-left py-[5px]">
-                <p>{item.amount}</p>
-                <p>{item.createdAt}</p>
+                <p>{sp(item.amount)} تومان </p>
+                <p>{new Date(item.createdAt).toLocaleDateString("fa-IR")}</p>
               </div>
             </div>
           ) : (
