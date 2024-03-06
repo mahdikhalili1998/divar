@@ -8,21 +8,21 @@ function AddPost() {
   const [form, setForm] = useState({
     title: "",
     info: "",
-    city: "",
     category: "",
+    city: "",
     price: null,
     pic: null,
   });
 
   const { data, isLoading } = useQuery(["getCategories"], getCategory);
-  // console.log({ data, isLoading });
-
+  console.log({ data, isLoading });
+  console.log(form);
   const changeHandler = (event) => {
     const name = event.target.name;
     if (name !== "pic") {
       setForm({ ...form, [name]: event.target.value });
     } else {
-      setForm({ ...form, [name]: event.target?.files[0] });
+      setForm({ ...form, [name]: event.target.files[0] });
     }
   };
 
@@ -34,7 +34,7 @@ function AddPost() {
     }
     const token = getCookis("accessToken");
     axios
-      .post(`${import.meta.env.VITE_BASE_URL}post/create`, formData, {
+      .post("http://localhost:3400/post/create", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `bearer ${token}`,
@@ -51,12 +51,12 @@ function AddPost() {
     >
       <h3 className="mb-2">افزودن آگهی</h3>
       <div className="flex items-center gap-1">
-        <label className="ml-[5px]" htmlFor="name-">
+        <label className="ml-[5px]" htmlFor="title">
           عنوان :
         </label>
         <input
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none"
-          id="name"
+          id="title"
           name="title"
           type="text"
         />
@@ -75,6 +75,7 @@ function AddPost() {
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none "
           id="price"
           name="price"
+          type="number"
         />
       </div>
       <div className="flex items-center gap-1">
@@ -83,6 +84,7 @@ function AddPost() {
           className="rounded border-solid border-2 border-[#a62626] focus:outline-none"
           id="city"
           name="city"
+          type="text"
         />
       </div>
       <div>

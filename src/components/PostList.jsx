@@ -9,8 +9,8 @@ function PostList() {
   const [isOpen, setIsOpen] = useState(false);
   const { data, isLoading } = useQuery(["get-post"], getPost);
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  console.log(baseUrl);
-  console.log(data);
+  // console.log(baseUrl);
+  // console.log(data);
   return (
     <div className="mx-2 my-3">
       <h2 className="mb-3 text-lg">آگهی های شما </h2>
