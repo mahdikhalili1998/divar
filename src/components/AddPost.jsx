@@ -15,8 +15,8 @@ function AddPost() {
   });
 
   const { data, isLoading } = useQuery(["getCategories"], getCategory);
-  console.log({ data, isLoading });
-  console.log(form);
+  // console.log({ data, isLoading });
+  // console.log(form);
   const changeHandler = (event) => {
     const name = event.target.name;
     if (name !== "pic") {

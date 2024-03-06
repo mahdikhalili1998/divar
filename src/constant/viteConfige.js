@@ -10,6 +10,7 @@ const paths = [
   "Router",
   "css",
   "layout",
+  "helper",
 ];
 
 export { paths };

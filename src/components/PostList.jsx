@@ -3,14 +3,18 @@ import React, { useState } from "react";
 import { getPost } from "../services/user";
 import { IoIosArrowDown } from "react-icons/io";
 import { GrFormClose } from "react-icons/gr";
-import { sp } from "../util/ReplaceNumber";
+import { sp } from "util/ReplaceNumber";
+import { openInfo } from "helper/help";
 
 function PostList() {
   const [isOpen, setIsOpen] = useState(false);
   const { data, isLoading } = useQuery(["get-post"], getPost);
-  const baseUrl = import.meta.env.VITE_BASE_URL;
-  // console.log(baseUrl);
   // console.log(data);
+  const openHandler = (data, selectedId) => {
+    setIsOpen((open) => !open);
+    openInfo(data, selectedId);
+    
+  };
   return (
     <div className="mx-2 my-3">
       <h2 className="mb-3 text-lg">آگهی های شما </h2>
@@ -31,7 +35,7 @@ function PostList() {
 
                   <p
                     className="flex gap-1 items-center"
-                    onClick={() => setIsOpen((open) => !open)}
+                    onClick={() => openHandler(data?.data.posts, item._id)}
                   >
                     توضیحات <IoIosArrowDown />
                   </p>
